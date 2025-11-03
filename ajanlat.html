@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsRPro – Ajánlatkérés</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid #1e293b;
+      z-index: 999;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      color: #22d3ee;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #22d3ee;
+    }
+
+    .cta {
+      background-color: #06b6d4;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background-color: #0891b2;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: linear-gradient(to bottom, #0f172a, #1e293b);
+    }
+
+    .hero h2 {
+      font-size: 2.7rem;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: #22d3ee;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    /* ===== AJÁNLATKÉRÉS FORM ===== */
+    .offer {
+      background: #1e293b;
+      border-radius: 15px;
+      padding: 40px;
+      border: 1px solid #334155;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .offer h3 {
+      color: #22d3ee;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .offer p {
+      text-align: center;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, textarea {
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background: #22d3ee;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0891b2;
+    }
+
+    /* ===== TÁJÉKOZTATÁS ===== */
+    .info-section {
+      text-align: center;
+      margin-top: 60px;
+      color: #cbd5e1;
+    }
+
+    .info-section h4 {
+      color: #22d3ee;
+      margin-bottom: 10px;
+    }
+
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .info-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 15px;
+      padding: 25px;
+      width: 300px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      color: #94a3b8;
+      padding: 25px 10px;
+      font-size: 0.9rem;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="navbar">
+      <div class="logo">PsRPro</div>
+      <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="#form">Ajánlatkérés</a>
+        <a href="#info">Információk</a>
+      </nav>
+      <a href="#form" class="cta">Kérek ajánlatot</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Informatikai <span>ajánlatkérés</span> – gyorsan és egyszerűen</h2>
+    <p>
+      Töltse ki az alábbi űrlapot, és csapatunk 1 munkanapon belül felveszi Önnel a kapcsolatot.
+      Az ajánlatkérés teljesen ingyenes, és nem jár semmilyen kötelezettséggel.
+    </p>
+  </section>
+
+  <!-- AJÁNLATKÉRŐ FORM -->
+  <section id="form" class="container">
+    <div class="offer">
+      <h3>Kérjen személyre szabott ajánlatot</h3>
+      <p>Adja meg adatait, és röviden írja le, miben segíthetünk.</p>
+
+      <form>
+        <input type="text" placeholder="Név / Cégnév" required>
+        <input type="email" placeholder="E-mail cím" required>
+        <input type="tel" placeholder="Telefonszám" required>
+        <select required>
+          <option value="">Válasszon szolgáltatást...</option>
+          <option>Felhőmegoldások</option>
+          <option>Egyedi fejlesztés</option>
+          <option>IT üzemeltetés</option>
+          <option>Kiberbiztonsági audit</option>
+        </select>
+        <textarea rows="6" placeholder="Röviden írja le az igényét..."></textarea>
+        <button type="submit">Ajánlatkérés elküldése</button>
+      </form>
+    </div>
+
+    <div class="info-section" id="info">
+      <h4>Mi történik az ajánlatkérés után?</h4>
+      <p>Áttekintjük az igényét, majd szakértő kollégánk 1 munkanapon belül kapcsolatba lép Önnel.</p>
+
+      <div class="info-grid">
+        <div class="info-box">
+          <h4>1. Elemzés</h4>
+          <p>Megvizsgáljuk a feladat jellegét, műszaki környezetét és a célokat.</p>
+        </div>
+        <div class="info-box">
+          <h4>2. Konzultáció</h4>
+          <p>Ingyenes online vagy telefonos megbeszélés, hogy pontosan megértsük az igényeket.</p>
+        </div>
+        <div class="info-box">
+          <h4>3. Ajánlatküldés</h4>
+          <p>Részletes, átlátható ajánlatot készítünk ütemezéssel és költségbontással.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> PsRPro – Minden jog fenntartva.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

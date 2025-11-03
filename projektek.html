@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsRPro – Folyamatban lévő projektjeink</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 { font-weight: 700; }
+
+    section { padding: 80px 20px; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid #1e293b;
+      z-index: 999;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      color: #22d3ee;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.15rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #22d3ee; }
+
+    .cta {
+      background-color: #06b6d4;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta:hover { background-color: #0891b2; }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: linear-gradient(to bottom, #0f172a, #1e293b);
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero span { color: #22d3ee; }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects h3 {
+      color: #22d3ee;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .projects p.intro {
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: 0 auto 50px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 330px;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: #22d3ee;
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h4 {
+      color: #22d3ee;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .project-content p {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar {
+      background: #334155;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(to right, #22d3ee, #0ea5e9);
+    }
+
+    .progress-text {
+      text-align: right;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      margin-top: 5px;
+    }
+
+    /* ===== FEATURED ===== */
+    .featured {
+      margin-top: 80px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 15px;
+      padding: 40px;
+    }
+
+    .featured h3 {
+      color: #22d3ee;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .featured-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .featured img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .featured-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .featured-text p {
+      color: #e2e8f0;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .highlight {
+      color: #22d3ee;
+      font-weight: 600;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      color: #94a3b8;
+      padding: 25px 10px;
+      font-size: 0.9rem;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .featured-content { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="navbar">
+      <div class="logo">PsRPro</div>
+      <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="ajanlat.html">Ajánlatkérés</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="projektek.html">Projektjeink</a>
+      </nav>
+      <a href="ajanlat.html" class="cta">Kérek ajánlatot</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Folyamatban lévő <span>projektjeink</span></h2>
+    <p>A PsRPro jelenleg több nagyszabású informatikai és építészeti projektet koordinál, amelyek a modern technológia és a precizitás ötvözésével valósulnak meg.</p>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section class="container featured">
+    <h3>Kiemelt projektünk: PrimeFinance Group Zrt.</h3>
+    <div class="featured-content">
+      <img src="primefinancelogo.png" alt="Pénzügyi cég irodája">
+      <div class="featured-text">
+        <p>
+          2025 tavaszán kezdtük meg egy <span class="highlight">pénzügyi tanácsadó vállalat</span> új, budapesti irodájának tervezését és kivitelezését.
+          A cél egy modern, innovatív és energiatakarékos irodatér létrehozása, amely egyszerre szolgálja a munkahatékonyságot és a reprezentatív megjelenést.
+        </p>
+        <p>
+          A projekt tartalmazza az <span class="highlight">okosvilágítási rendszer</span> beépítését, az <span class="highlight">IT infrastruktúra</span> kiépítését, valamint a
+          <span class="highlight">belsőépítészeti tervezést</span> is.  
+          A PsRPro csapata felel a generálkivitelezésért, az elektromos hálózatért és az automatizált klímarendszerért.
+        </p>
+        <p>
+          Jelenlegi státusz: <strong>75%</strong> készültség — a befejezés várhatóan <strong>2025. decemberében</strong> történik.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER PROJECTS -->
+  <section class="projects container">
+    <h3>Egyéb folyamatban lévő projektjeink</h3>
+    <p class="intro">
+      Több különböző iparágban végzünk fejlesztéseket, irodakialakítást és technológiai megvalósítást.  
+      Célunk minden projektben az, hogy tartós, értékteremtő és esztétikus megoldásokat hozzunk létre.
+    </p>
+
+    <div class="project-grid">
+      <div class="project">
+        <img src="amazon.jpg" alt="Adatközpont modernizálás">
+        <div class="project-content">
+          <h4>Adatközpont modernizálása</h4>
+          <p>Új, redundáns szerverarchitektúra és klimatizált rack-szobák kiépítése egy telekommunikációs partner számára.</p>
+          <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
+          <div class="progress-text">60% készültség</div>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="mediam.png" alt="Okosotthon-rendszer">
+        <div class="project-content">
+          <h4>Okosotthon-rendszer fejlesztés</h4>
+          <p>Egy újgenerációs Smart Life integráció fejlesztése, ahol az ügyfél mobilról vezérelheti a teljes lakását.</p>
+          <div class="progress-bar"><div class="progress" style="width: 45%;"></div></div>
+          <div class="progress-text">45% készültség</div>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="ftc.jpg" alt="Irodabővítés">
+        <div class="project-content">
+          <h4>Informatikai iroda bővítés</h4>
+          <p>Új tárgyalók és szerverterem kialakítása, teljes belsőépítészeti kivitelezéssel és strukturált hálózattal.</p>
+          <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+          <div class="progress-text">90% készültség</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> PsRPro – Minden jog fenntartva.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

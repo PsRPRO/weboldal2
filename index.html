@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsRPro – Informatikai megoldások</title>
+  <style>
+    /* ======= ALAPSTÍLUSOK ======= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ======= NAVBAR ======= */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid #1e293b;
+      z-index: 999;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      color: #22d3ee;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2rem; /* nagyobb betűméret */
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #22d3ee;
+    }
+
+    .cta {
+      background-color: #06b6d4;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background-color: #0891b2;
+    }
+
+    /* ======= HERO ======= */
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(to bottom, #0f172a, #1e293b);
+    }
+
+    .hero h2 {
+      font-size: 2.7rem;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: #22d3ee;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .btn-main {
+      background: #22d3ee;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-main:hover {
+      background: #0891b2;
+    }
+
+    /* ======= SZOLGÁLTATÁSOK ======= */
+    .services {
+      text-align: center;
+    }
+
+    .services h3 {
+      color: #22d3ee;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .services p {
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 15px;
+      padding: 25px;
+      width: 320px;
+      text-align: left;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #22d3ee;
+    }
+
+    .card h4 {
+      color: #22d3ee;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+    }
+
+    /* ======= RÓLUNK ======= */
+    .about {
+      background: #1e293b;
+      text-align: center;
+    }
+
+    .about h3 {
+      color: #22d3ee;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* ======= ÉRTÉKEINK ======= */
+    .values {
+      text-align: center;
+    }
+
+    .values h3 {
+      color: #22d3ee;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .value-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .value {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 15px;
+      padding: 25px;
+      width: 300px;
+    }
+
+    .value h4 {
+      color: #22d3ee;
+      margin-bottom: 10px;
+    }
+
+    /* ======= KAPCSOLAT ======= */
+    .contact {
+      background: #0f172a;
+      text-align: center;
+    }
+
+    .contact h3 {
+      color: #22d3ee;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #22d3ee;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0891b2;
+    }
+
+    /* ======= LÁBLÉC ======= */
+    footer {
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      color: #94a3b8;
+      padding: 25px 10px;
+      font-size: 0.9rem;
+    }
+
+    /* ======= RESPONSIVE ======= */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .card-container, .value-boxes {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ======= NAVBAR ======= -->
+  <header>
+    <div class="navbar">
+      <div class="logo">PsRPro</div>
+      <nav>
+        <a href="#services">Szolgáltatások</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="projektek.html">Projektjeink</a>
+        <a href="#contact">Kapcsolat</a>
+      </nav>
+      <a href="ajanlat.html" class="cta">Ajánlatot kérek</a>
+    </div>
+  </header>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero">
+    <h2>Professzionális, biztonságos és skálázható<br><span>IT megoldások vállalatoknak</span></h2>
+    <p>
+      A PsRPro Informatikai Kft. modern rendszereket épít és üzemeltet, amelyek valódi üzleti értéket teremtenek.
+      Legyen szó felhőmigrációról, hálózatbiztonságról vagy egyedi fejlesztésről – mi mindig a megbízhatóságra törekszünk.
+    </p>
+    <a href="#services" class="btn-main">Szolgáltatásaink</a>
+  </section>
+
+  <!-- ======= SZOLGÁLTATÁSOK ======= -->
+  <section id="services" class="services container">
+    <h3>Szolgáltatásaink</h3>
+    <p>Teljes körű informatikai támogatás a stratégiai tervezéstől a napi üzemeltetésig.</p>
+    <div class="card-container">
+      <div class="card">
+        <h4>Felhőmegoldások</h4>
+        <p>Segítünk a vállalatoknak felhőbe költözni, költséget csökkenteni és növelni az adatbiztonságot.</p>
+      </div>
+      <div class="card">
+        <h4>Egyedi fejlesztés</h4>
+        <p>Modern web- és mobilalkalmazásokat készítünk, amelyek teljesen testreszabottak az ügyfél igényeire.</p>
+      </div>
+      <div class="card">
+        <h4>IT üzemeltetés</h4>
+        <p>Professzionális rendszergazdai szolgáltatás 24/7 monitorozással, gyors reakcióval és SLA garanciával.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= RÓLUNK ======= -->
+  <section id="about" class="about">
+    <div class="container">
+      <h3>Rólunk</h3>
+      <p>
+        A <strong>PsRPro</strong> csapata tapasztalt IT szakemberekből áll, akik több mint 10 éves tapasztalattal segítik ügyfeleiket
+        a digitális átalakulásban. Hiszünk abban, hogy a technológia csak akkor értékes, ha egyszerre megbízható és könnyen kezelhető.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======= ÉRTÉKEINK ======= -->
+  <section id="values" class="values container">
+    <h3>Értékeink</h3>
+    <div class="value-boxes">
+      <div class="value"><h4>Megbízhatóság</h4><p>Mindig elérhetőek vagyunk, és garantáljuk a stabil működést.</p></div>
+      <div class="value"><h4>Innováció</h4><p>Új technológiákat vezetünk be ügyfeleink sikeréért.</p></div>
+      <div class="value"><h4>Transzparencia</h4><p>Nyílt kommunikáció, tiszta folyamatok és átlátható költségek.</p></div>
+    </div>
+  </section>
+
+  <!-- ======= KAPCSOLAT ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h3>Kapcsolat</h3>
+      <p>Lépjen kapcsolatba velünk, és 1 munkanapon belül válaszolunk.</p>
+      <form>
+        <input type="text" placeholder="Név" required>
+        <input type="email" placeholder="E-mail" required>
+        <textarea placeholder="Üzenet" rows="5"></textarea>
+        <button type="submit">Küldés</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    © <span id="year"></span> PsRPro – Minden jog fenntartva.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

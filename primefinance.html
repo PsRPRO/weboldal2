@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsRPro – Pénzügyi cég irodatervezés projekt</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.8;
+    }
+
+    h1, h2, h3, h4 { font-weight: 700; }
+    section { padding: 90px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ===== NAVBAR ===== */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid #1e293b;
+      z-index: 999;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      color: #22d3ee;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.15rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #22d3ee; }
+
+    .cta {
+      background-color: #06b6d4;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta:hover { background-color: #0891b2; }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 140px 20px 100px;
+      background: linear-gradient(to bottom, #0f172a, #1e293b);
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+    }
+
+    .hero span { color: #22d3ee; }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    /* ===== PROJECT INFO ===== */
+    .project-info {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 60px;
+      margin-bottom: 70px;
+    }
+
+    .project-info h3 {
+      color: #22d3ee;
+      margin-bottom: 40px;
+      font-size: 2.1rem;
+      text-align: center;
+    }
+
+    .project-info img {
+      width: 100%;
+      border-radius: 15px;
+      margin: 40px 0;
+      max-height: 420px;
+      object-fit: cover;
+    }
+
+    .project-info p {
+      color: #e2e8f0;
+      margin-bottom: 25px;
+      text-align: justify;
+      font-size: 1.05rem;
+    }
+
+    .highlight { color: #22d3ee; font-weight: 600; }
+
+    /* ===== STAGES ===== */
+    .stages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .stage {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 15px;
+      padding: 30px;
+      width: 310px;
+      transition: transform 0.3s;
+    }
+
+    .stage:hover { transform: translateY(-5px); }
+
+    .stage h4 {
+      color: #22d3ee;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .stage p {
+      color: #cbd5e1;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* ===== PASSWORD SECTION ===== */
+    .secure-section {
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    .secure-section h3 {
+      color: #22d3ee;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .secure-section p {
+      color: #cbd5e1;
+      margin-bottom: 40px;
+      font-size: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .password-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .password-box input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .password-box button {
+      background: #22d3ee;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .password-box button:hover { background: #0891b2; }
+
+    /* ===== DOCUMENTS ===== */
+    .documents {
+      display: none;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 50px;
+      max-width: 750px;
+      margin: 70px auto 0;
+    }
+
+    .documents h4 {
+      color: #22d3ee;
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .documents ul {
+      list-style: none;
+      line-height: 2.2;
+    }
+
+    .documents li {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+
+    .documents a {
+      color: #22d3ee;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .documents a:hover { text-decoration: underline; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      color: #94a3b8;
+      padding: 40px 10px;
+      font-size: 0.95rem;
+      margin-top: 100px;
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .project-info { padding: 30px; }
+      .stages { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="navbar">
+      <div class="logo">PsRPro</div>
+      <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="ajanlat.html">Ajánlatkérés</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="projektek.html">Projektjeink</a>
+      </nav>
+      <a href="ajanlat.html" class="cta">Kérek ajánlatot</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2><span>Pénzügyi cég irodatervezés</span> projekt</h2>
+    <p>Modern, fenntartható és technológiailag fejlett irodai környezet kialakítása a jövő pénzügyi szakemberei számára.</p>
+  </section>
+<br><br>
+  <!-- PROJECT INFO -->
+  <section class="container project-info">
+    <h3>Projekt részletes bemutatása</h3>
+
+    <p>
+      A <span class="highlight">PsRPro</span> csapata jelenleg egy <strong>budapesti pénzügyi vállalat</strong> új, 
+      <strong>70 + 40 + 4 + 4 m²-es</strong> irodájának teljes tervezésén és kivitelezésén dolgozik.  
+      A projekt célja, hogy a modern technológia, az esztétika és a funkcionalitás tökéletes harmóniában legyen.
+    </p>
+
+    <img src="primefinancelogo.png" alt="Pénzügyi cég irodatervezés">
+
+    <p>
+      Az új iroda három fő egységből áll: <strong>ügyféltér</strong>, <strong>irodai részleg</strong>, valamint 
+      <strong>tárgyalózóna</strong>. Az infrastruktúra teljesen új, beleértve az elektromos hálózatot, az IT-rendszert 
+      és az okosvezérlési megoldásokat.  
+    </p>
+
+    <p>
+      A PsRPro felel a <span class="highlight">generálkivitelezésért</span>, az <span class="highlight">elektromos hálózatért</span>, 
+      valamint az <span class="highlight">intelligens épületautomatizálásért</span>.  
+      A projekt jelenlegi státusza: <strong>75% készültség</strong>.
+    </p>
+
+    <div class="stages">
+      <div class="stage">
+        <h4>1. Tervezési fázis</h4>
+        <p>Belsőépítészeti koncepciók, anyagminták, térszervezés és világítási tervek elkészítése.</p>
+      </div>
+      <div class="stage">
+        <h4>2. Kivitelezés</h4>
+        <p>Burkolás, álmennyezet, kábelezés, okosrendszerek telepítése és rendszerintegráció.</p>
+      </div>
+      <div class="stage">
+        <h4>3. Átadás és tréning</h4>
+        <p>Rendszertesztelés, ügyféltréning, dokumentáció és végső átadás a megrendelő részére.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASSWORD PROTECTED SECTION -->
+  <section class="secure-section container">
+    <h3>Jelszóval védett dokumentumok</h3>
+    <p>
+      Ez a rész érzékeny projektadatokat tartalmaz (tervrajzok, költségtervek, ütemezések).  
+      A hozzáférés kizárólag engedéllyel rendelkező partnereink számára elérhető.
+    </p>
+
+    <div class="password-box" id="login-box">
+      <input type="password" id="password" placeholder="Írja be a jelszót...">
+      <button onclick="checkPassword()">Belépés</button>
+    </div>
+
+    <div class="documents" id="documents">
+      <h4>Letölthető dokumentumok</h4>
+      <ul>
+        <li><a href="#" download>Irodaterv_Alaprajz.pdf</a></li>
+        <li><a href="#" download>Költségbecslés_Q4_2025.xlsx</a></li>
+        <li><a href="#" download>Kivitelezési_Ütemterv.docx</a></li>
+        <li><a href="#" download>SmartSystem_Tervrajz.png</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> PsRPro – Minden jog fenntartva.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const correctPassword = "psrsecure";
+      if (input === correctPassword) {
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("documents").style.display = "block";
+      } else {
+        alert("Hibás jelszó! Kérjük, próbálja újra.");
+      }
+    }
+  </script>
+</body>
+</html>
